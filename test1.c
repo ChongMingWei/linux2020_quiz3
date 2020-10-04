@@ -1,5 +1,4 @@
 #include "test1.h"
-
 int asr_i(signed int m, unsigned int n)
 {
     // Check if the compiler supports arithmetic right shift
@@ -9,3 +8,4 @@ int asr_i(signed int m, unsigned int n)
     int fix = *(int *) &fixu;
     return (m >> n) | (fix ^ (fix >> n));
 }
+

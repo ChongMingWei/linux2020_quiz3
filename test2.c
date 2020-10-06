@@ -14,3 +14,16 @@ int bitwiseComplement(int N)
 {  
     return N==0?1:~N&~((0xfffffffe) << (31-__builtin_clz(N))); 
 }
+
+int firstMissingPositive(int* nums, int numsSize){
+    int *tmp = malloc(sizeof(int)*numsSize);
+    for (int i = 0;i < numsSize; ++i){
+        if(nums[i]>0&&nums[i]<=numsSize)
+            tmp[nums[i]-1] = 1;
+    }
+    for (int i = 0;i < numsSize; ++i){
+        if(tmp[i]!=1)
+            return i+1;
+    }
+    return numsSize+1;
+}
